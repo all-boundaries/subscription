@@ -1,0 +1,22 @@
+services:
+  db:
+    container_name: subscription-db
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: thepass
+      POSTGRES_DB: subscription
+    ports:
+      - 5432
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  adminer:
+    container_name: subscription-adminer
+    image: adminer
+    restart: always
+    ports:
+      - 8080
+
+volumes:
+  pgdata:

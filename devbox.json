@@ -1,14 +1,29 @@
 {
   "$schema": "https://raw.githubusercontent.com/jetpack-io/devbox/0.10.3/.schema/devbox.schema.json",
-  "packages": ["jdk@21", "jq@latest"],
+  "packages": [
+    "jdk@21",
+    "jq@latest",
+    "postgresql@latest",
+    "docker-compose@2.26.1"
+  ],
   "env": {
     "TESTCONTAINERS_DOCKER_SOCKET_OVERRIDE": "/var/run/docker.sock",
-    "DOCKER_HOST": "unix://${HOME}/.colima/default/docker.sock",
-    "TESTCONTAINERS_RYUK_DISABLED": "true"
+    "DOCKER_HOST":                           "unix://${HOME}/.colima/default/docker.sock",
+    "TESTCONTAINERS_RYUK_DISABLED":          "true"
   },
   "shell": {
     "init_hook": [
       "export TESTCONTAINERS_HOST_OVERRIDE=$(colima ls -j | jq -r '.address')"
-    ]
+    ],
+    "scripts": {
+      "start": [
+        "docker-compose --file _setup/docker-compose.yaml up -d",
+        "__db_port=$(docker port subscription-db 5432 | grep -o '[0-9]*$' | uniq)",
+        "export SPRING_DATASOURCE_URL=jdbc:postgresql://localhost:${__db_port}/subscription",
+        "export SPRING_DATASOURCE_USERNAME=postgres",
+        "export SPRING_DATASOURCE_PASSWORD=thepass",
+        "./gradlew bootRun --info"
+      ]
+    }
   }
 }
