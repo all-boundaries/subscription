@@ -8,13 +8,10 @@
   ],
   "env": {
     "TESTCONTAINERS_DOCKER_SOCKET_OVERRIDE": "/var/run/docker.sock",
-    "DOCKER_HOST":                           "unix://${HOME}/.colima/default/docker.sock",
-    "TESTCONTAINERS_RYUK_DISABLED":          "true"
+    "DOCKER_HOST": "unix://${HOME}/.colima/default/docker.sock",
+    "TESTCONTAINERS_RYUK_DISABLED": "true"
   },
   "shell": {
-    "init_hook": [
-      "export TESTCONTAINERS_HOST_OVERRIDE=$(colima ls -j | jq -r '.address')"
-    ],
     "scripts": {
       "start": [
         "docker-compose --file _setup/docker-compose.yaml up -d",
