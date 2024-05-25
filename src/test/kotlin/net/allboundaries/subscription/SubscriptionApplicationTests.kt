@@ -17,6 +17,6 @@ class SubscriptionApplicationTests {
 	companion object {
 		@Container
 		@ServiceConnection
-		var database = PostgreSQLContainer("postgres:13.14-bullseye")
+		var database = PostgreSQLContainer("postgres:16.3-alpine")
 	}
 }
