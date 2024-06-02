@@ -13,6 +13,9 @@ class PlanHandler {
     fun allPlans(request: ServerRequest): Mono<ServerResponse> {
         return ServerResponse
             .ok()
-            .bodyValue(CollectionResponse(listOf(PlanResponse("1", "2"))))
+            .bodyValue(CollectionResponse(listOf(
+                PlanResponse("pln-cGLxc6", "Explorer"),
+                PlanResponse("pln-M61GdE", "Curious"),
+            )))
     }
 }
