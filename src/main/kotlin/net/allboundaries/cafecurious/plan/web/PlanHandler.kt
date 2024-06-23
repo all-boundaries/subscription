@@ -1,6 +1,6 @@
-package net.allboundaries.subscription.plan.web
+package net.allboundaries.cafecurious.plan.web
 
-import net.allboundaries.subscription.infra.CollectionResponse
+import net.allboundaries.cafecurious.infra.CollectionResponse
 import org.springframework.stereotype.Component
 import org.springframework.web.reactive.function.server.ServerRequest
 import org.springframework.web.reactive.function.server.ServerResponse
@@ -13,9 +13,11 @@ class PlanHandler {
     fun allPlans(request: ServerRequest): Mono<ServerResponse> {
         return ServerResponse
             .ok()
-            .bodyValue(CollectionResponse(listOf(
+            .bodyValue(
+                CollectionResponse(listOf(
                 PlanResponse("pln-cGLxc6", "Explorer"),
                 PlanResponse("pln-M61GdE", "Curious"),
-            )))
+            ))
+            )
     }
 }

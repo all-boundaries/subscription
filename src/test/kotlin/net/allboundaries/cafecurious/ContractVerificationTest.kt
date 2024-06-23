@@ -1,4 +1,4 @@
-package net.allboundaries.subscription
+package net.allboundaries.cafecurious
 
 import au.com.dius.pact.provider.junit5.PactVerificationContext
 import au.com.dius.pact.provider.junitsupport.Provider
@@ -6,8 +6,8 @@ import au.com.dius.pact.provider.junitsupport.State
 import au.com.dius.pact.provider.junitsupport.loader.PactFolder
 import au.com.dius.pact.provider.spring.spring6.PactVerificationSpring6Provider
 import au.com.dius.pact.provider.spring.spring6.WebFluxSpring6Target
-import net.allboundaries.subscription.plan.web.PlanHandler
-import net.allboundaries.subscription.plan.web.PlanRoute
+import net.allboundaries.cafecurious.plan.web.PlanHandler
+import net.allboundaries.cafecurious.plan.web.PlanRoute
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.TestTemplate
 import org.junit.jupiter.api.extension.ExtendWith

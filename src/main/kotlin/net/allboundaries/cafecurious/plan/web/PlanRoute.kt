@@ -1,4 +1,4 @@
-package net.allboundaries.subscription.plan.web
+package net.allboundaries.cafecurious.plan.web
 
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration

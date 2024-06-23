@@ -1,6 +1,9 @@
-package net.allboundaries.subscription.plan.web
+package net.allboundaries.cafecurious.plan.web
 
-import net.allboundaries.subscription.infra.CollectionResponse
+import net.allboundaries.cafecurious.infra.CollectionResponse
+import net.allboundaries.cafecurious.plan.web.PlanHandler
+import net.allboundaries.cafecurious.plan.web.PlanResponse
+import net.allboundaries.cafecurious.plan.web.PlanRoute
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired

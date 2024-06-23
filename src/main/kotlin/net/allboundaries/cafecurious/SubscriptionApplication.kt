@@ -1,4 +1,4 @@
-package net.allboundaries.subscription
+package net.allboundaries.cafecurious
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
